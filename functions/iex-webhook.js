@@ -1,9 +1,9 @@
 exports.handler = async (event, context) => {
-  const { text } = JSON.parse(event.body)
-  console.log("text", text)
+  console.log({ httpMethod: event.httpMethod })
+  console.log({ body: event.body })
 
   return {
     statusCode: 200,
-    body: text,
+    body: event.body,
   }
 }
